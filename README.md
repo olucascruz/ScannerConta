@@ -17,5 +17,6 @@ o arquivo scannerToken.lex:
 como rodar:
 
 "/.scanner conta.txt"
+<br>
 "/.scannerToken conta.txt"
 
