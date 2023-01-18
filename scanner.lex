@@ -1,17 +1,16 @@
 %{
 %}
-DIGITO               [0-9]
-PALAVRA              [a-zA-Z]
-ESPACO               " "
-INTEIRO              "int"
+INTEIRO              "int "[a-z]";"
+VALORINT             [a-z]" ""="" "[0-9]";"
+SOMA                 [a-z]" ""="" "[a-z]" ""+"" "[a-z]";"
+
 
 %%
-{INTEIRO} printf("Voce escreveu um inteiro: \"%s\"\n", yytext);
-{DIGITO}   printf("Voce escrever um digito: \"%s\"\n", yytext);
-{PALAVRA} printf("Voce escreveu uma palavra: \"%s\"\n", yytext);
-{ESPACO} printf("Voce escreveu uma espaco: \"%s\"\n", yytext);
+{INTEIRO}    printf("Voce escreveu um inteiro: \"%s\"\n", yytext);
+{VALORINT}   printf("Voce deu um valor a um inteiro: \"%s\"\n", yytext);
+{SOMA}       printf("Voce esta fazendo uma soma: \"%s\"\n", yytext);
 
-.	   printf("Nao reconheceu: \"%s\"\n", yytext);
+.	           printf("Nao reconheceu: \"%s\"\n", yytext);
 %%
 int main(int argc, char *argv[])
 {
